@@ -1,0 +1,81 @@
+title: MARC(Meta-Sejong AI Robotics Challenge) 2025
+description: MARC(Meta-Sejong AI Robotics Challenge) 2025 Project Page
+baseurl: ""
+url: "https://metasejong-competition.github.io"
+
+# 다국어 설정
+collections:
+  ko:
+    output: true
+    permalink: /ko/:path/
+  en:
+    output: true
+    permalink: /en/:path/
+  guide:
+    output: true
+    permalink: /guide/:path/
+  apply:
+    output: true
+    permalink: /apply/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+      lang: "en"
+  - scope:
+      path: "_ko"
+      type: "ko"
+    values:
+      layout: "default"
+      lang: "ko"
+  - scope:
+      path: "_en"
+      type: "en"
+    values:
+      layout: "default"
+      lang: "en"
+  - scope:
+      path: "_guide"
+      type: "guide"
+    values:
+      layout: "guide"
+      lang: "en"
+  - scope:
+      path: "_apply"
+      type: "apply"
+    values:
+      layout: "apply"
+      lang: "en"
+
+# Sass 설정
+sass:
+  sass_dir: _sass
+  style: compressed
+  style_dir: assets/css
+  include_paths:
+    - _sass
+    - assets/css
+  load_paths:
+    - _sass
+    - node_modules
+  sourcemap: never
+  output_style: compressed
+  cache: false
+  cache_partials: false
+  main: main.scss
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-include-cache
+
+# Cache busting
+cache_busting: true
+cache_busting_style: timestamp 

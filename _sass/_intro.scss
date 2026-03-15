@@ -1,0 +1,184 @@
+#title-section {
+    margin-top: 1rem;
+    padding: 2rem 0;
+    position: relative;
+    overflow: hidden;
+    
+    background-image: url('../images/bg_title.png');
+    background-size: cover; 
+    color: #fff;
+
+    .title {
+        font-size: 2rem;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .title-event a {
+        color: #fff;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+}
+
+#intro-section {
+    padding: 2rem 0;
+    position: relative;
+    overflow: hidden;
+
+    .intro-video {
+        flex: 1;
+        position: relative;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        aspect-ratio: 16/9;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(0, 123, 255, 0.1), rgba(0, 123, 255, 0));
+            pointer-events: none;
+        }
+    }
+} 
+
+
+#mission-section {
+    .mission-selector {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .stage-item {
+        margin-top: 2rem;
+
+        .stage-title {
+            font-weight: bold;
+        }
+    }
+
+    .stage-details {
+        .media-block {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: space-evenly;
+
+            .media-content {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                min-width: 300px;
+                min-height: 250px;
+                max-width: 350px;
+                max-height: 250px;
+
+                // border: 1px solid #ccc;
+                // border-radius: 12px;
+                padding: 1rem;
+
+                .media-info {
+                    width: max-content;
+                    background-color:lightgray;
+                    border-radius: 20px;
+                    padding: 1px 10px;
+                    margin: 0 auto;
+                    font-size: 0.8rem;
+                    color: #666;
+
+                    .subtitle {
+                        font-size: 0.8rem;
+                        color: #000;
+                        margin: 0;
+                    }
+                }
+
+                img {
+                    max-width: 300px;
+                    max-height: 200px;
+                    object-fit: cover;
+                }
+
+                video {
+                    max-width: 300px;
+                    max-height: 200px;
+                    object-fit: cover;
+                }
+                
+                .comment {
+                    font-size: 0.7rem;
+                    color: #666;
+                }
+                
+                &.double {
+                    min-width: 600px;
+                    max-width: 600px;
+
+                    img {
+                        max-width: 600px;
+                    }
+
+                    video {
+                        max-width: 600px;
+                    }
+                }
+                &.row {
+                    min-width: 100%;
+                    max-width: 100%;
+                    padding: 0;
+                    height: 300px;
+                    max-height: 300px;
+
+                    img {
+                        width: auto;
+                        height: 230px;
+                        max-width: 90%;
+                        max-height: 230px;
+                        margin: 0 auto;
+                    }
+
+                    video {
+                        max-width: 100%;
+                    }
+                }
+
+
+            }
+
+        }
+    }
+}
+
+
+#timeline-section {
+    .timeline-item {
+        .date {
+            font-weight: bold;
+        }
+
+        .date.strike {
+            text-decoration: line-through;
+            color: red;
+        }
+    }
+}
