@@ -8,8 +8,9 @@ permalink: /en/challenge/
 
 # The Challenge
 
-A robot moves through a virtual campus, perceiving, navigating, and manipulating
-to complete a two-stage mission.
+A **citizen-safety robotics** concept: a robot patrols a virtual campus to
+**find lost belongings** and **recognize people in distress or unusual situations
+(SAR)** — a two-stage mission joining perception, navigation, and manipulation.
 
 ## Stage 1 — Locate &amp; recognize
 
@@ -35,6 +36,14 @@ bring it to where it belongs.
 | Arm | 6-DoF manipulator for pick-and-place. |
 | Cameras | Fixed **CCTV at 8MP (3840×2160)** + the robot's **stereo cameras**. |
 | Platform | **Isaac Sim 5.1.0**, **ROS2 Humble**, **Ubuntu 22.04**. |
+
+## What makes it technically distinctive
+
+| Theme | What it means |
+|---|---|
+| **Relational VLA** | Ground language to objects *and* their relations in a scene, not just isolated detections. |
+| **Multi-view fusion** | Combine fixed **CCTV** views with the robot's **stereo cameras** for robust perception. |
+| **Navigation + manipulation** | One continuous mission joins mobile navigation with 6-DoF pick-and-place. |
 
 ## How it is evaluated (overview)
 

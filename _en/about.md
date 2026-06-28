@@ -17,22 +17,7 @@ The 1st edition (2025) centered on **object detection** for waste sorting and
 collection. MARC 2026 moves to **Vision-Language-Action (VLA) grounding**: robots
 must connect natural-language goals to what they perceive, and then act.
 
-## The mission
-
-A **citizen-safety robotics** concept: a robot patrols a virtual campus to
-
-- **find lost belongings** scattered across the environment, and
-- **recognize people in distress or unusual situations (SAR)**.
-
-This is the narrative that frames both competition stages (see [Challenge](/en/challenge/)).
-
-## What makes it technically distinctive
-
-| Theme | What it means |
-|---|---|
-| **Relational VLA** | Ground language to objects *and* their relations in a scene, not just isolated detections. |
-| **Multi-view fusion** | Combine fixed **CCTV** views with the robot's **stereo cameras** for robust perception. |
-| **Navigation + manipulation** | One continuous mission joins mobile navigation with 6-DoF pick-and-place. |
+The mission, stages, and technical approach are covered on the **[Challenge](/en/challenge/)** page.
 
 ## Why take part
 
