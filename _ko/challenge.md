@@ -5,7 +5,6 @@ lang: ko
 ref: challenge
 permalink: /ko/challenge/
 ---
-<!-- [P1·P2] Challenge — 스테이지 정보 전달(P1)·가이드 유도(P2) -->
 
 # 챌린지
 

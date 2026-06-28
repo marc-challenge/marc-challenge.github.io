@@ -1,31 +1,16 @@
-# _data/media.yml — 미디어 슬롯 (영상 placeholder / 교체용)
-#
-# 구성안 01 §1.1: 소개 영상은 아직 미준비.
-# 개념 이미지를 먼저 넣고, 영상 완성 시 같은 슬롯에서 type/src 만 교체한다.
-# 운영자는 이 파일 한 곳만 수정 → 레이아웃/마크업은 _includes/hero-media.html 가 처리.
-#
-# 슬롯 스키마:
-#   type:    image | video            (image = placeholder, video = 교체 후)
-#   src:     자산 경로 또는 임베드 URL
-#   poster:  영상 로딩 전 표시할 썸네일(개념 이미지 재활용)
-#   ratio:   프레임 비율 (영상과 동일하게 16:9 고정)
-#   caption_*: 다국어 캡션 (placeholder 단계에서만; 영상 교체 시 비움)
-#   href:    클릭 시 임시 연결(placeholder 단계). 영상 단계에선 보통 비움.
 
-# ── 소개(인트로) 미디어: Home Hero 하단 + Resources "소개 영상" 카드 공유 ──
 intro:
-  type: image                                   # 1단계 placeholder. 영상 준비 후 → video
-  src: assets/media/marc-2026-concepts.png      # 개념 이미지 placeholder (영상 준비 시 교체)
-  poster: assets/media/marc-2026-concepts.png   # 영상 단계에서 poster 로 재활용
+  type: image
+  src: assets/media/marc-2026-concepts.png
+  poster: assets/media/marc-2026-concepts.png
   ratio: "16:9"
-  embed: ""                                      # 영상 단계: YouTube/Vimeo iframe URL 또는 자체호스팅 mp4
-  autoplay: false                               # 영상 단계: 음소거 + 사용자 제어 권장(접근성)
+  embed: ""
+  autoplay: false
   muted: true
-  href: /en/about/                              # placeholder 단계 임시 연결(영상 단계엔 "")
-  caption_en: ""                                # 본문 캡션 비활성(상단 season-banner 와 중복 방지). 영상 교체 시에도 빈 값 유지
+  href: /en/about/
+  caption_en: ""
   caption_ko: ""
 
-# ── (선택) 챌린지 개요 미디어 슬롯 — 동일 추상화 재사용 예시 ──
 challenge_overview:
   type: image
   src: assets/media/challenge-overview.png

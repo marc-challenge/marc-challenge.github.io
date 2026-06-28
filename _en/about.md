@@ -5,7 +5,6 @@ lang: en
 ref: about
 permalink: /en/about/
 ---
-<!-- [P1·P4] About — inform (P1) and build trust/authority (P4) -->
 
 # About MARC 2026
 

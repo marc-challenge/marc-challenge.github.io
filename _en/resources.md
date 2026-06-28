@@ -5,7 +5,6 @@ lang: en
 ref: resources
 permalink: /en/resources/
 ---
-<!-- [P2] Resources — single download hub; spark interest and route to the guide -->
 
 # Resources
 

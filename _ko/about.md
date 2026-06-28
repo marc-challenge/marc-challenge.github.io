@@ -5,7 +5,6 @@ lang: ko
 ref: about
 permalink: /ko/about/
 ---
-<!-- [P1·P4] About — 정보 전달(P1)·신뢰/권위(P4) -->
 
 # MARC 2026 소개
 

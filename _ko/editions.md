@@ -5,7 +5,6 @@ lang: ko
 ref: editions
 permalink: /ko/editions/
 ---
-<!-- [P4·P5] Editions — 역대 성과로 신뢰(P4)·다년도 재방문(P5) -->
 
 {% include edition-archive-banner.html %}
 

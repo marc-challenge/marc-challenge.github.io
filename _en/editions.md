@@ -5,7 +5,6 @@ lang: en
 ref: editions
 permalink: /en/editions/
 ---
-<!-- [P4·P5] Editions — trust via track record (P4) and multi-year re-engagement (P5) -->
 
 {% include edition-archive-banner.html %}
 

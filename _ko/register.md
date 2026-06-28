@@ -5,7 +5,6 @@ lang: ko
 ref: register
 permalink: /ko/register/
 ---
-<!-- [P3] Register — 전환 페이지 -->
 
 # 참가 등록
 

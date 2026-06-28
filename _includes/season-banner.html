@@ -1,14 +1,3 @@
-{%- comment -%}
-  season-banner.html — 사이트 상태(season state)별 전역 배너 (예시 스니펫 / DRAFT)
-
-  구성안 01 §0-A: 매년 같은 URL 로 운영 → "지금이 대회 기간인가" 에 따라
-  상단 전역 알림 문구를 전환한다. 운영자는 _config 의 season_state 한 줄만 바꾼다.
-
-  상태: off-season | announced | active | archived
-  사용법(레이아웃 <body> 상단): {% include season-banner.html %}
-
-  ※ 실제 다국어 문구는 _data/ 로 분리 권장(여기선 인라인 예시).
-{%- endcomment -%}
 
 {%- assign state = site.season_state | default: "announced" -%}
 {%- assign lang = page.lang | default: site.lang_default -%}

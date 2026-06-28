@@ -5,7 +5,6 @@ lang: en
 ref: challenge
 permalink: /en/challenge/
 ---
-<!-- [P1·P2] Challenge — inform on stages (P1), spark interest toward the guide (P2) -->
 
 # The Challenge
 

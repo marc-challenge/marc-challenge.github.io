@@ -5,7 +5,6 @@ lang: en
 ref: organizers
 permalink: /en/organizers/
 ---
-<!-- [P4] Organizers — trust and authority -->
 
 # Organizers
 

@@ -5,7 +5,6 @@ lang: en
 ref: timeline
 permalink: /en/timeline/
 ---
-<!-- [P1·P3] Timeline — inform (P1) and drive registration urgency (P3) -->
 
 # Timeline
 

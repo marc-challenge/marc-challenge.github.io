@@ -5,7 +5,6 @@ lang: ko
 ref: notices
 permalink: /ko/notices/
 ---
-<!-- [P1·P4] Notices — 필수 정책 명문화·정보 전달(P1)·신뢰(P4) -->
 
 # 공지 · 정책
 

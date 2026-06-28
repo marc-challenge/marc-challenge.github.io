@@ -5,7 +5,6 @@ lang: en
 ref: notices
 permalink: /en/notices/
 ---
-<!-- [P1·P4] Notices — required policy statements; inform (P1) and build trust (P4) -->
 
 # Notices &amp; Policies
 

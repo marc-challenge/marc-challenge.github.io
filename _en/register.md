@@ -5,7 +5,6 @@ lang: en
 ref: register
 permalink: /en/register/
 ---
-<!-- [P3] Register — the conversion page -->
 
 # Register
 

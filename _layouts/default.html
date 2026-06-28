@@ -30,8 +30,7 @@
       </nav>
 
       <div class="site-header__lang">
-        {%- comment -%} 같은 ref 의 반대 언어 페이지로 토글 {%- endcomment -%}
-        {%- assign target = "" -%}
+                {%- assign target = "" -%}
         {%- assign pool = site[other] -%}
         {%- for p in pool -%}{%- if p.ref == page.ref -%}{%- assign target = p.url -%}{%- endif -%}{%- endfor -%}
         {%- if target == "" -%}{%- assign target = "/" | append: other | append: "/" -%}{%- endif -%}

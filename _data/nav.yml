@@ -1,4 +1,3 @@
-# 전역 네비게이션 — 구성안 01 IA (8개 + 홈). 라벨은 언어별.
 items:
   - ref: home
     en: Home

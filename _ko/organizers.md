@@ -5,7 +5,6 @@ lang: ko
 ref: organizers
 permalink: /ko/organizers/
 ---
-<!-- [P4] Organizers — 신뢰·권위 -->
 
 # 주최 · 연계
 

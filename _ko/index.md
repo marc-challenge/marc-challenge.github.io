@@ -5,8 +5,6 @@ lang: ko
 ref: home
 permalink: /ko/
 ---
-<!-- [P2·P3 주, P1 보조] Home / 랜딩 — 등록 전환(P3)·흥미 유발(P2) 최우선 -->
-<!-- season-banner 는 _layouts/default.html 에서 전역(상단) 1회 렌더; 본문에서 중복 include 금지 -->
 
 <section class="hero">
   <p class="hero__eyebrow">2회차 · IEEE MetaCom 2026 연계</p>

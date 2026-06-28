@@ -5,7 +5,6 @@ lang: ko
 ref: timeline
 permalink: /ko/timeline/
 ---
-<!-- [P1·P3] Timeline — 일정 정보 전달(P1)·등록 전환 촉진(P3) -->
 
 # 일정
 

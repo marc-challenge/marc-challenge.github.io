@@ -5,7 +5,6 @@ lang: ko
 ref: resources
 permalink: /ko/resources/
 ---
-<!-- [P2] Resources — 다운로드 단일 진입점·가이드 유도 -->
 
 # 리소스
 

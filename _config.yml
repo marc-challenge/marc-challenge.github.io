@@ -1,27 +1,14 @@
-# _config.yml — MARC 2026 공식 홈페이지 (DRAFT, 자체 완결형 빌드)
-#
-# 이 draft/ 폴더는 deploy/ 안에서 단독으로 빌드/미리보기 가능하도록 구성됨
-# (2025 public-docs 사이트를 건드리지 않음). 자체 _layouts/ + assets/css 사용.
-#
-# 로컬 미리보기:  bundle install && bundle exec jekyll serve
-# 정본 이관 시:   이 폴더를 marc-challenge.github.io 리포 루트로 승격
-#                (또는 public-docs 사이트로 콘텐츠 머지)
 
-# ── 사이트 메타 (2026) ──────────────────────────────────────
 title: "MARC 2026 — MetaSejong AI Robot Challenge"
 description: "MetaSejong AI Robot Challenge 2026 — Vision-Language-Action robot competition, in conjunction with IEEE MetaCom 2026."
 url: "https://marc-challenge.github.io"
 baseurl: ""
-lang_default: en   # 국제 대회: 영어가 1차 청중
+lang_default: en
 
-# ── 다년도 운영: 사이트 상태(season state) 변수 ──────────────
-# 운영자는 콘텐츠 수정 없이 아래 3개 변수만 바꿔 사이트 톤을 전환한다(→ 구성안 0-A).
-#   season_state: off-season | announced | active | archived
-season_state: announced       # (안) 7/6 공개 전까지 announced, 공개일에 active 로 전환
+season_state: announced
 edition: "2026"
-competition_active: false     # 7/6 공개 시 true 로 전환
+competition_active: false
 
-# 회차 메타 (Hero/배너 카피용)
 event:
   short_name: "MARC 2026"
   full_name: "MetaSejong AI Robot Challenge 2026"
@@ -31,14 +18,12 @@ event:
   venue: "Xi'an, China"
   finals_date: "2026-11-09"
 
-# 외부 링크 (회차 버전 고정 — 아카이브 시 v2026.x 로 잠금)
 links:
-  dev_guide: "https://marc-challenge.readthedocs.io/"   # RTD slug: marc-challenge
+  dev_guide: "https://marc-challenge.readthedocs.io/"
   starter_kit: "https://github.com/marc-challenge/marc-starter-kit"
-  sdk_version: "2026.1.0"                                # marc-sdk
+  sdk_version: "2026.1.0"
   collaborator_account: "marc-challenge-office"
 
-# ── 다국어 컬렉션 ───────────────────────────────────────────
 collections:
   ko:
     output: true
@@ -53,7 +38,6 @@ defaults:
   - scope: { path: "_en", type: "en" }
     values: { layout: "default", lang: "en" }
 
-# ── 빌드 설정 (자체 레이아웃 사용, gem 테마 미의존) ──────────
 markdown: kramdown
 sass:
   style: compressed
