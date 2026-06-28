@@ -22,8 +22,8 @@ intro:
   autoplay: false                               # 영상 단계: 음소거 + 사용자 제어 권장(접근성)
   muted: true
   href: /en/about/                              # placeholder 단계 임시 연결(영상 단계엔 "")
-  caption_en: "Intro video coming soon"
-  caption_ko: "소개 영상 준비 중 — 공개 예정"
+  caption_en: ""                                # 본문 캡션 비활성(상단 season-banner 와 중복 방지). 영상 교체 시에도 빈 값 유지
+  caption_ko: ""
 
 # ── (선택) 챌린지 개요 미디어 슬롯 — 동일 추상화 재사용 예시 ──
 challenge_overview:
