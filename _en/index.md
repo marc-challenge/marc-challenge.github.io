@@ -62,7 +62,6 @@ Then **[register your team](/en/register/)** to receive your team ID and begin.
 
 ---
 
-> This challenge framing is **under internal review** and uses tentative wording.
 > Please review the required notices on the **[Notices](/en/notices/)** page:
 > offline judging runtime · third-party license attribution · the competition
 > background (playground) may change.

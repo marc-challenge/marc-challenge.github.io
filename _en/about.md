@@ -39,6 +39,3 @@ This is the narrative that frames both competition stages (see [Challenge](/en/c
 - Hands-on experience with **deployment-grade simulation** (Isaac Sim 5.1).
 - A **paper track** with the opportunity to publish via **IEEE Xplore**.
 - An **international finals** in **Xi'an, China**, alongside IEEE MetaCom 2026.
-
-> This page reflects the organizers' framing and is **under internal review**.
-> Naming, scope, and wording may be refined before public launch.

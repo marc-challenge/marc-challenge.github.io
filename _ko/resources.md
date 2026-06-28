@@ -8,8 +8,7 @@ permalink: /ko/resources/
 
 # 리소스
 
-필요한 모든 것의 단일 진입점입니다. 실제 파일은 GitHub / Read the Docs 에 있으며,
-이 페이지는 링크만 제공합니다.
+필요한 모든 것의 단일 진입점입니다. 실제 파일은 GitHub / Read the Docs 에 있습니다.
 
 {% unless site.competition_active %}
 > 일부 다운로드는 공개일(잠정 **2026-07-06**)에 해제됩니다. 아래 링크는 미리보기이며

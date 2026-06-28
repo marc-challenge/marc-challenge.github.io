@@ -8,8 +8,7 @@ permalink: /en/resources/
 
 # Resources
 
-A single entry point to everything you need. Files live on GitHub / Read the Docs;
-this page links to them.
+A single entry point to everything you need. Files live on GitHub / Read the Docs.
 
 {% unless site.competition_active %}
 > Some downloads unlock at public launch (tentatively **2026-07-06**). Links below

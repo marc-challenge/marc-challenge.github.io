@@ -8,10 +8,6 @@ permalink: /en/challenge/
 
 # The Challenge
 
-> Public overview only. Exact input/output formats and scoring specs live in the
-> **[developer guide](/en/resources/)**. The stage design below is **under internal
-> review** (a proposed configuration for this edition).
-
 A robot moves through a virtual campus, perceiving, navigating, and manipulating
 to complete a two-stage mission.
 
@@ -45,9 +41,6 @@ bring it to where it belongs.
 - **Automated quantitative scoring** across Stage 1 and Stage 2.
 - **Paper review** → selection of finalists.
 - **Finals**: on-site presentation + **live demo** → final ranking.
-
-> Only the **methodology** is described here. Exact metrics, thresholds, and
-> formulas are **not disclosed**.
 
 ## Learn more
 

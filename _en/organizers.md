@@ -21,9 +21,6 @@ IEEE MetaCom 2026**.
 | Program Chair | *To be announced* |
 | Technical Chair | *To be announced* |
 
-> Committee membership is **under internal review** and will be published before
-> public launch.
-
 ## Hosts &amp; collaborators
 
 Organized by the host institution and research lab. Full host and partner details

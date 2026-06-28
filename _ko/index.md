@@ -61,6 +61,5 @@ permalink: /ko/
 
 ---
 
-> 본 챌린지 구성은 **내부 검토 중**이며 협의 톤을 따릅니다.
 > **[Notices](/ko/notices/)** 의 필수 공지를 확인하세요: 심사 런타임 인터넷 차단 ·
 > 제3자 라이선스 attribution · 대회 배경(playground)은 변경될 수 있음.

@@ -35,14 +35,3 @@ The only published background USD is the **practice `chungmu`** environment. The
 **actual competition may run on a different background** — this prevents overfitting
 to, or exposure of, the final stage.
 
-## Tone &amp; terminology
-
-- Public materials are written in a **consultative tone** — "under internal review"
-  and "(proposed)" rather than "finalized" — pending co-chair agreement.
-- Stage 2's destination is referred to as the **"designated location."**
-
-## Non-disclosure boundary
-
-Answer coordinates, scoring constants, internal seeds, operational backends, and
-ground-truth data are **not disclosed**. Scoring is described at the level of
-**methodology only**.
