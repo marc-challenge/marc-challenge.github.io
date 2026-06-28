@@ -1,20 +1,35 @@
-# metasejong-competition.github.io
-MARC(Meta-Sejong AI Robotics Challenge) 2025 Project Page
+# marc-challenge.github.io
 
-# Version History
+Official homepage for the **MARC 2026 — MetaSejong AI Robot Challenge**, in conjunction with
+IEEE MetaCom 2026. Jekyll static site, bilingual (English primary, Korean mirror).
 
-- V0.1-R20250314-R01 작성을 위한 초안 템플릿 
-- V0.9-R20250330-04 프로젝트 가이드와 지원 Form, 개발자 가이드 분리
-- V0.9-R20250401-01 GNB에 apply 링크에 다국어 적용한 링크로 수정
-- V0.9-R20250401-02 apply와 submit을 구분 
-- V0.9-R20250401-03 guide 문서의 readthedocs build 오류 해결
+## Local preview
 
-# Clean up and Test 
-
-```
-rm -rf _site
-bundle exec jekyll serve
+```bash
+bundle install
+bundle exec jekyll serve        # http://localhost:4000   ( / -> /en/ )
 ```
 
-open http://localhost:4000 
+Requires Ruby with `ruby-dev` / `build-essential` for native gems.
 
+## Structure
+
+- `_en/`, `_ko/` — pages (EN primary, KO mirror)
+- `_layouts/`, `_includes/`, `_data/`, `assets/`
+- `_config.yml` — site config incl. the season-state toggle
+- `.github/workflows/jekyll.yml` — GitHub Pages build/deploy
+
+## Multi-year operation
+
+The site is reused at the same URL each edition. Operators switch tone by editing three keys
+in `_config.yml` — `season_state` (`off-season` / `announced` / `active` / `archived`),
+`edition`, and `competition_active` — with no content changes. Past editions are preserved
+under the Editions section.
+
+## Intro media
+
+The intro slot (`_data/media.yml` -> `intro`) currently shows a concept image placeholder.
+When the intro video is ready, change `type: image` to `video` and set `embed`/`src` in that
+one file; the markup in `_includes/hero-media.html` handles the rest.
+
+> Draft — schedule and external links are provisional / under internal review.

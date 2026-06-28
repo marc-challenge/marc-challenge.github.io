@@ -1,0 +1,51 @@
+{%- comment -%}
+  season-banner.html — 사이트 상태(season state)별 전역 배너 (예시 스니펫 / DRAFT)
+
+  구성안 01 §0-A: 매년 같은 URL 로 운영 → "지금이 대회 기간인가" 에 따라
+  상단 전역 알림 문구를 전환한다. 운영자는 _config 의 season_state 한 줄만 바꾼다.
+
+  상태: off-season | announced | active | archived
+  사용법(레이아웃 <body> 상단): {% include season-banner.html %}
+
+  ※ 실제 다국어 문구는 _data/ 로 분리 권장(여기선 인라인 예시).
+{%- endcomment -%}
+
+{%- assign state = site.season_state | default: "announced" -%}
+{%- assign lang = page.lang | default: site.lang_default -%}
+
+{%- if state != "active" -%}
+<div class="season-banner season-banner--{{ state }}" role="status">
+  {%- case state -%}
+
+  {%- when "off-season" -%}
+    {%- if lang == "ko" -%}
+      <span class="season-banner__tag">안내</span>
+      <span>다음 회차 MARC 대회를 준비 중입니다. 일정이 정해지면 이곳에서 먼저 공지합니다.</span>
+    {%- else -%}
+      <span class="season-banner__tag">Notice</span>
+      <span>The next MARC challenge is in preparation. Schedule updates will be announced here first.</span>
+    {%- endif -%}
+
+  {%- when "announced" -%}
+    {%- if lang == "ko" -%}
+      <span class="season-banner__tag">곧 시작</span>
+      <span>{{ site.event.short_name }} 공개·등록이 곧 시작됩니다(잠정 2026-07-06). 일정은 변경될 수 있습니다.</span>
+    {%- else -%}
+      <span class="season-banner__tag">Coming soon</span>
+      <span>{{ site.event.short_name }} opens for registration soon (tentatively 2026-07-06). Dates are subject to change.</span>
+    {%- endif -%}
+
+  {%- when "archived" -%}
+    {%- if lang == "ko" -%}
+      <span class="season-banner__tag">종료</span>
+      <span>{{ site.event.short_name }} 는 종료되었습니다. 결과와 하이라이트는 역대 대회에서 확인하세요.</span>
+      <a class="season-banner__link" href="/{{ lang }}/editions/">역대 대회 보기 &rarr;</a>
+    {%- else -%}
+      <span class="season-banner__tag">Concluded</span>
+      <span>{{ site.event.short_name }} has concluded. See results and highlights in Past Editions.</span>
+      <a class="season-banner__link" href="/{{ lang }}/editions/">View past editions &rarr;</a>
+    {%- endif -%}
+
+  {%- endcase -%}
+</div>
+{%- endif -%}

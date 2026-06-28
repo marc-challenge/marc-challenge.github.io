@@ -1,0 +1,32 @@
+{%- comment -%}
+  edition-archive-banner.html — 과거 회차 아카이브 안내 배너 (예시 스니펫 / DRAFT)
+
+  구성안 01 §0-A.4: 지난 회차 스냅샷(/{year}/)은 고정 URL 로 동시 열람 가능해야 한다.
+  과거 회차 페이지 상단에 "이 페이지는 {연도} 회차 아카이브입니다 → 현재 대회 보기"
+  배너를 노출해 현재 대회와 혼동을 막는다.
+
+  발동 조건: 페이지(또는 회차)의 season_state == "archived" (아카이브 스냅샷)
+  사용법: {% include edition-archive-banner.html %}
+
+  archived 스냅샷의 외부 링크(스타터킷/가이드)는 그 회차 버전(v{year}.x)으로 고정한다.
+{%- endcomment -%}
+
+{%- assign state = page.season_state | default: site.season_state -%}
+{%- assign lang = page.lang | default: site.lang_default -%}
+{%- assign year = page.edition | default: site.edition -%}
+
+{%- if state == "archived" -%}
+<div class="edition-archive-banner" role="note">
+  {%- if lang == "ko" -%}
+    <span class="edition-archive-banner__tag">아카이브</span>
+    <span>이 페이지는 <strong>{{ year }} 회차</strong> 아카이브입니다(그 해 마감 시점 그대로 보존).
+    링크와 자료는 {{ year }} 회차 버전으로 고정되어 있습니다.</span>
+    <a class="edition-archive-banner__link" href="/">현재 대회 보기 &rarr;</a>
+  {%- else -%}
+    <span class="edition-archive-banner__tag">Archive</span>
+    <span>This page is the <strong>{{ year }} edition</strong> archive (frozen as of that year's close).
+    Links and assets are pinned to the {{ year }} edition.</span>
+    <a class="edition-archive-banner__link" href="/">View the current challenge &rarr;</a>
+  {%- endif -%}
+</div>
+{%- endif -%}

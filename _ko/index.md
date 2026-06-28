@@ -1,182 +1,69 @@
 ---
 layout: default
-title: MARC(Meta-Sejong AI Robotics Challenge) 2025
+title: "MARC 2026 — MetaSejong AI Robot Challenge"
 lang: ko
 ref: home
 permalink: /ko/
 ---
-{% assign t = site.data.translations.ko %}
+<!-- [P2·P3 주, P1 보조] Home / 랜딩 — 등록 전환(P3)·흥미 유발(P2) 최우선 -->
 
-<div id="title-section">
-  <div class="title" id="home">{{ t.home.event.title }}</div>
-  <div class="title-event"><a href="https://ieee-metacom.org">IEEE MetaCom 2025</a></div>
-</div>
+{% include season-banner.html %}
 
-<section id="intro-section">
-  <div class="title-level-1">{{ t.home.intro-section.title }}</div>
+<section class="hero">
+  <p class="hero__eyebrow">2회차 · IEEE MetaCom 2026 연계</p>
+  <h1 class="hero__title">MARC 2026</h1>
+  <p class="hero__subtitle">MetaSejong AI Robot Challenge</p>
 
-  {% assign intro = t.home.intro-section.content %}
-  <p>{{ intro.text-1 }}</p>
-  <p>{{ intro.text-2 }}</p>
-  <p>{{ intro.text-3 }}</p>
+  <p class="hero__catch">
+    로봇이 <em>보고, 이해하고, 행동하도록</em> 가르쳐 보세요. 고품질 시뮬레이션에서
+    펼쳐지는 캠퍼스 규모의 Vision-Language-Action 챌린지.
+  </p>
 
-  <p>{{ intro.text-4 }}</p>
-  <ul>
-    <li>{{ intro.text-4-1 }}</li>
-    <li>{{ intro.text-4-2 }}</li>
-  </ul>
-
-  <p>{{ intro.text-5 }}</p>
-
-
-  <div class="intro-video">
-    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/C9kYMB_sAC8?si=Tu1yvUpNkCNhDtrK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <div class="hero__cta">
+    <a class="btn btn--primary" href="/ko/register/">참가 등록</a>
+    <a class="btn btn--ghost" href="/ko/resources/">개발자 가이드 · 스타터킷</a>
   </div>
 
-  <div class="links">
-    <div class="link-button">
-      <a href="https://github.com/metasejong-competition/metacom2025-metasejong"><i class="fab fa-github"></i> Meta-Sejong Platform</a>
-    </div>
-    <div class="link-button">
-      <a href="https://github.com/metasejong-competition/metasejong-airobotics"><i class="fab fa-github"></i> Demo Application</a>
-    </div>
-    <div class="link-button">
-      <a href="https://metasejong-competition.readthedocs.io"><i class="fas fa-book"></i> Developer Guide</a>
-    </div>
-  </div>
+  {% include hero-media.html slot="intro" lang="ko" %}
 </section>
 
+## 무엇을 겨루나
 
-<section id="mission-section">
-  <div class="title-level-1">{{ t.home.mission-section.title }}</div>
-  {% assign mission = t.home.mission-section.content %}
-  <p>{{ mission.text-1 }}</p>
+자율 로봇이 가상 캠퍼스를 돌며 **분실물을 찾고**, **위급·이상상황에 처한 사람을
+인지(SAR)** 하는, 시민 안전 로봇 컨셉입니다. 올해는 2025년의 객체 탐지에서
+**Vision-Language-Action(VLA) 그라운딩**으로 패러다임을 전환합니다.
 
-  <h3>{{ mission.text-2 }}</h3>
-  <ul class="mission-selector">
-    <li><button class="stage-button"  onclick="handleMissionClick('stage-1')">{{ mission.stage-label.stage-1 }}</button></li>
-    <li><button class="stage-button"  onclick="handleMissionClick('stage-2')">{{ mission.stage-label.stage-2 }}</button></li>
-    <li><button class="stage-button"  onclick="handleMissionClick('stage-3')">{{ mission.stage-label.stage-3 }}</button></li>
-  </ul>
+- **Vision-Language-Action(VLA)** 그라운딩
+- **캠퍼스 분실물** 탐색
+- **위급·이상상황 사람 인지(SAR)**
+- **Isaac Sim 5.1** 기반
 
-  <div class="stage-details">
-    {% for stage in mission.stage-content %}
-      {% assign stage-key = 'stage-' | append: forloop.index %}
-      {% assign stage-item = mission.stage-content[stage-key] %}
+## MARC 의 세 가지 차별점
 
-      <div class="stage-item {{ stage-key }}">
-        <h4>{{ stage-item.label }}</h4>
-        <p>{{ stage-item.description }}</p>
-        <div class="media-block">
+| | |
+|---|---|
+| **1 · 실감 시뮬레이션** | Isaac Sim 5.1.0 환경 + CCTV + 탑재 로봇 — 실제 배치에 가까운 경험. |
+| **2 · VLA 그라운딩 + 멀티뷰 융합** | 고정 CCTV(8MP)와 로봇 스테레오 카메라를 융합, 언어 기반·관계형 장면을 추론. |
+| **3 · Navigation + Pick-and-Place** | 이동 내비게이션과 6DoF 매니퓰레이션을 하나의 미션으로 결합. |
 
-          {% for media-item in stage-item.media %}
-            {% assign media-key = 'media-' | append: forloop.index %}
-            {% assign media = stage-item.media[media-key] %}
+## 주요 일정 (잠정)
 
-            <div class="media-content {{ media.wide}}">
-              <div class="media-info">
-                <p class="subtitle">{{ media.subtitle }}</p>
-                <!-- <p class="comment"><em>{{ media._comment }}</em></p> -->
-              </div>
+| 시점 | 내용 |
+|---|---|
+| **2026-07-06** | 공개 및 참가 등록 시작 |
+| **2026-08-31** | 코드·논문 제출 마감 |
+| **~2026-09-18** | 본선 진출팀 발표 |
+| **2026-11-09** | 본선 — 중국 시안(Xi'an), IEEE MetaCom 2026 |
 
-            {% if media.type == 'image' %}
-              <img src="{{ media.url }}" alt="{{ media.subtitle }}" />
-            {% elsif media.type == 'video' %}
-              <video controls>
-                <source src="{{ media.url }}"  alt="{{ media.subtitle }}" type="video/webm">
-                  <img src="/assets/images/mission-object-detection.png" style="width: 100%; height: 100%; object-fit: cover;">
-              </video>
+> 모든 일정은 **잠정이며 변경될 수 있습니다.** 전체 일정은 [Timeline](/ko/timeline/) 참조.
 
-            {% endif %}
-            </div>
-          {% endfor %}
-        </div>
-      </div>
-    {% endfor %}      
-  </div>
-</section>
+## 지금 시작하기
 
-<section id="paper-section">
-  <div class="title-level-1">{{ t.home.paper-section.title }}</div>
-  {% assign paper-contents = t.home.paper-section.content %}
-  <p>{{ paper-contents.text-1 }}</p>
-  <p>{{ paper-contents.text-2 }}</p>
-</section>
+**[Resources](/ko/resources/)** 에서 개발자 가이드·스타터킷·SDK 를 받고,
+**[참가 등록](/ko/register/)** 으로 팀 ID 를 발급받아 시작하세요.
 
-<section id="award-section">
-  <div class="title-level-1">{{ t.home.award-section.title }}</div>
-  <p>{{ t.home.award-section.content }}</p>
-</section>
+---
 
-<section id="timeline-section">
-  <div class="title-level-1">{{ t.home.timeline-section.title }}</div>
-    {% assign timelines = t.home.timeline-section.content %}
-  <ul>
-    {% for timeline in timelines %}
-      {% assign timeline-key = 'timeline-' | append: forloop.index %}
-
-      <li class="timeline-item">
-        {% if timelines[timeline-key].extended == '' %}
-          {{ timelines[timeline-key].description }}: <span class="date">{{ timelines[timeline-key].date }}</span>
-        {% else %}
-          {{ timelines[timeline-key].description }}: <span class="date">{{ timelines[timeline-key].extended }}</span>
-          <span class="date strike">{{ timelines[timeline-key].date }}</span> 
-        {% endif %}
-      </li>
-
-
-
-  {% endfor %}
-  </ul>
-</section>
-
-
-
-<section id="hosting-section">
-  <div class="title-level-1">{{ t.home.hosting-section.title }}</div>
-  <div class="hosting">
-    <div class="organization">
-      {% assign hostevent = t.home.hosting-section.content %}
-
-      <a href="{{ hostevent.link }}">
-        <h4><img src="/assets/images/link-icon.png" width="20" >{{ hostevent.name }}</h4>
-      </a>
-      <p>{{ hostevent.description }}</p>
-    </div>
-  </div>
-</section>
-
-
-<section id="organization-section">
-  <div class="title-level-1">{{ t.home.organization-section.title }}</div>
-  {% assign organizations = t.home.organization-section.content %}
-  <div class="organizations">
-    {% for organization in organizations %}
-      {% assign organization-key = 'organization-' | append: forloop.index %}
-
-    <div class="organization">
-      <a href="{{ organizations[organization-key].link }}">
-        <img src="/assets/images/{{ organizations[organization-key].image }}" alt="{{ organizations[organization-key].name }}">
-      </a>
-    </div>
-    {% endfor %}
-  </div>
-</section>
-
-
-<section id="sponsor-section">
-  <div class="title-level-1">{{ t.home.sponsor-section.title }}</div>
-  {% assign sponsors = t.home.sponsor-section.content %}
-  <div class="sponsors">
-    {% for sponsor in sponsors %}
-      {% assign sponsor-key = 'sponsor-' | append: forloop.index %}
-
-    <div class="sponsor">
-      <a href="{{ sponsors[sponsor-key].link }}">
-        <img src="/assets/images/{{ sponsors[sponsor-key].image }}" title="{{ sponsors[sponsor-key].name }}">
-        <!-- {{ sponsors[sponsor-key].name }} -->
-      </a>
-    </div>
-    {% endfor %}
-  </div>
-</section>
+> 본 챌린지 구성은 **내부 검토 중**이며 협의 톤을 따릅니다.
+> **[Notices](/ko/notices/)** 의 필수 공지를 확인하세요: 심사 런타임 인터넷 차단 ·
+> 제3자 라이선스 attribution · 대회 배경(playground)은 변경될 수 있음.

@@ -1,0 +1,56 @@
+{%- comment -%}
+  hero-media.html — 이미지/영상 공통 미디어 슬롯 (예시 스니펫 / DRAFT)
+
+  구성안 01 §1.1: 영상 미준비 → 개념 이미지 placeholder 를 먼저 넣고,
+  영상 완성 시 _data/media.yml 의 슬롯에서 type: image → video 만 바꾼다.
+  마크업은 한 곳(여기)에서만 분기 → 페이지 본문은 include 한 줄만 호출.
+
+  사용법:
+    {% include hero-media.html slot="intro" lang=page.lang %}
+
+  슬롯 데이터: site.data.media[slot]  (스키마는 _data/media.yml 주석 참조)
+{%- endcomment -%}
+
+{%- assign m = site.data.media[include.slot] -%}
+{%- assign lang = include.lang | default: page.lang | default: site.lang_default -%}
+
+<figure class="hero-media ratio-{{ m.ratio | default: '16:9' | replace: ':', '-' }}">
+  {%- if m.type == "video" -%}
+    {%- comment -%} 2단계 — 영상 교체 후 {%- endcomment -%}
+    {%- if m.embed and m.embed != "" -%}
+      <iframe class="hero-media__frame"
+              src="{{ m.embed }}"
+              title="{{ site.event.full_name }} intro video"
+              frameborder="0"
+              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen></iframe>
+    {%- else -%}
+      <video class="hero-media__frame"
+             poster="{{ m.poster | default: m.src | relative_url }}"
+             {% if m.autoplay %}autoplay{% endif %}
+             {% if m.muted %}muted{% endif %}
+             controls playsinline>
+        <source src="{{ m.src | relative_url }}" type="video/mp4">
+      </video>
+    {%- endif -%}
+  {%- else -%}
+    {%- comment -%} 1단계 — placeholder (개념 이미지). 클릭 시 임시 연결 가능 {%- endcomment -%}
+    {%- if m.href and m.href != "" -%}
+      <a href="{{ m.href | relative_url }}" class="hero-media__link">
+        <img class="hero-media__frame" src="{{ m.src | relative_url }}"
+             alt="{% if lang == 'ko' %}{{ m.caption_ko }}{% else %}{{ m.caption_en }}{% endif %}">
+      </a>
+    {%- else -%}
+      <img class="hero-media__frame" src="{{ m.src | relative_url }}"
+           alt="{% if lang == 'ko' %}{{ m.caption_ko }}{% else %}{{ m.caption_en }}{% endif %}">
+    {%- endif -%}
+
+    {%- comment -%} placeholder 캡션. 영상 교체 시 caption_* 를 비우면 자동 숨김 {%- endcomment -%}
+    {%- if lang == "ko" and m.caption_ko != "" -%}
+      <figcaption class="hero-media__caption">{{ m.caption_ko }}</figcaption>
+    {%- elsif m.caption_en != "" -%}
+      <figcaption class="hero-media__caption">{{ m.caption_en }}</figcaption>
+    {%- endif -%}
+  {%- endif -%}
+</figure>

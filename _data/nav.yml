@@ -1,0 +1,29 @@
+# 전역 네비게이션 — 구성안 01 IA (8개 + 홈). 라벨은 언어별.
+items:
+  - ref: home
+    en: Home
+    ko: 홈
+  - ref: about
+    en: About
+    ko: 소개
+  - ref: challenge
+    en: Challenge
+    ko: 챌린지
+  - ref: timeline
+    en: Timeline
+    ko: 일정
+  - ref: register
+    en: Register
+    ko: 등록
+  - ref: resources
+    en: Resources
+    ko: 리소스
+  - ref: notices
+    en: Notices
+    ko: 공지
+  - ref: organizers
+    en: Organizers
+    ko: 주최
+  - ref: editions
+    en: Editions
+    ko: 역대 대회

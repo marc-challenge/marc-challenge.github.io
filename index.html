@@ -1,19 +1,17 @@
 ---
 layout: null
 permalink: /
+sitemap: false
 ---
 <!DOCTYPE html>
-<html>
+<html lang="{{ site.lang_default }}">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0;url=/en/">
-    <link rel="canonical" href="/en/">
-    <title>Redirecting to English version...</title>
+  <meta charset="utf-8">
+  <title>{{ site.event.short_name }}</title>
+  <link rel="canonical" href="{{ '/' | append: site.lang_default | append: '/' | relative_url }}">
+  <meta http-equiv="refresh" content="0; url={{ '/' | append: site.lang_default | append: '/' | relative_url }}">
 </head>
 <body>
-    <p>Redirecting to English version...</p>
-    <script>
-        window.location.href = '/en/';
-    </script>
+  <p>Redirecting to <a href="{{ '/' | append: site.lang_default | append: '/' | relative_url }}">{{ site.event.short_name }}</a>&hellip;</p>
 </body>
-</html> 
+</html>
