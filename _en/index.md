@@ -6,8 +6,7 @@ ref: home
 permalink: /en/
 ---
 <!-- [P2·P3 main, P1 support] Home / Landing — convert to registration (P3); spark interest (P2) -->
-
-{% include season-banner.html %}
+<!-- season-banner is rendered globally in _layouts/default.html (top); do not include it again here -->
 
 <section class="hero">
   <p class="hero__eyebrow">2nd Edition · In conjunction with IEEE MetaCom 2026</p>
