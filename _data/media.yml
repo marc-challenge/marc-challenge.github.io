@@ -8,8 +8,8 @@ intro:
   autoplay: false
   muted: true
   href: /en/about/
-  caption_en: ""
-  caption_ko: ""
+  caption_en: "Intro video coming soon"
+  caption_ko: "소개 영상 준비 중 — 공개 예정"
 
 challenge_overview:
   type: image

@@ -17,6 +17,7 @@ event:
   affiliation: "IEEE MetaCom 2026"
   venue: "Xi'an, China"
   finals_date: "2026-11-09"
+  contact_email: "marc2026@iotcoss.ac.kr"
 
 links:
   dev_guide: "https://marc-challenge.readthedocs.io/"

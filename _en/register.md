@@ -19,7 +19,7 @@ permalink: /en/register/
 ## Who can enter
 
 A **student team** challenge (workshop track). Team composition and size guidance
-will be confirmed at launch.
+will be announced at launch.
 
 ## How registration works
 

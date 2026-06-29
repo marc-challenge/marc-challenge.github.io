@@ -12,7 +12,7 @@ A single entry point to everything you need. Files live on GitHub / Read the Doc
 
 {% unless site.competition_active %}
 > Some downloads unlock at public launch (tentatively **2026-07-06**). Links below
-> are previews and may be finalized then.
+> are previews and may be updated then.
 {% endunless %}
 
 | Resource | What it is |

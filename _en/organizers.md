@@ -30,6 +30,6 @@ will be added here.
 
 For inquiries, please use the contact channel below.
 
-- Email: *to be announced*
+- Email: **[{{ site.event.contact_email }}](mailto:{{ site.event.contact_email }})**
 - Submission collaborator account (for scoring): **`marc-challenge-office`**
   (added as a collaborator to your private repo — see [Register](/en/register/)).

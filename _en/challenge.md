@@ -12,6 +12,8 @@ A **citizen-safety robotics** concept: a robot patrols a virtual campus to
 **find lost belongings** and **recognize people in distress or unusual situations
 (SAR)** — a two-stage mission joining perception, navigation, and manipulation.
 
+> This challenge structure is a draft under internal review; details may change before launch.
+
 ## Stage 1 — Locate &amp; recognize
 
 - **Submit the location coordinates** of target items (lost belongings / people).

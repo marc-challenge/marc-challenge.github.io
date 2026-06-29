@@ -12,7 +12,7 @@ permalink: /ko/resources/
 
 {% unless site.competition_active %}
 > 일부 다운로드는 공개일(잠정 **2026-07-06**)에 해제됩니다. 아래 링크는 미리보기이며
-> 그때 확정될 수 있습니다.
+> 그때 갱신될 수 있습니다.
 {% endunless %}
 
 | 리소스 | 내용 |
