@@ -27,12 +27,10 @@
   {%- when "archived" -%}
     {%- if lang == "ko" -%}
       <span class="season-banner__tag">종료</span>
-      <span>{{ site.event.short_name }} 는 종료되었습니다. 결과와 하이라이트는 역대 대회에서 확인하세요.</span>
-      <a class="season-banner__link" href="/{{ lang }}/editions/">역대 대회 보기 &rarr;</a>
+      <span>{{ site.event.short_name }} 는 종료되었습니다.</span>
     {%- else -%}
       <span class="season-banner__tag">Concluded</span>
-      <span>{{ site.event.short_name }} has concluded. See results and highlights in Past Editions.</span>
-      <a class="season-banner__link" href="/{{ lang }}/editions/">View past editions &rarr;</a>
+      <span>{{ site.event.short_name }} has concluded.</span>
     {%- endif -%}
 
   {%- endcase -%}

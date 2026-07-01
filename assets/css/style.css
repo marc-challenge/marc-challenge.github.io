@@ -36,7 +36,12 @@ blockquote { margin: 1rem 0; padding: .4rem 1rem; border-left: 3px solid var(--b
 .site-nav { display: flex; gap: 4px 14px; flex-wrap: wrap; flex: 1; }
 .site-nav__link { color: var(--muted); font-size: .92rem; padding: 2px 0; }
 .site-nav__link.is-active { color: var(--brand); font-weight: 700; }
-.site-header__lang a { font-size: .85rem; border: 1px solid var(--line); border-radius: 999px; padding: 3px 12px; color: var(--muted); }
+.site-header__utils { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+/* All three pills are direct flex siblings sharing one box model so they render identically. */
+.site-header__utils > a { font-size: .85rem; line-height: 1.5; border: 1px solid var(--line); border-radius: 999px; padding: 3px 12px; color: var(--muted); white-space: nowrap; }
+.site-header__utils > a:hover { text-decoration: none; }
+/* Call-out: same pill as the language toggle, only recolored in brand to draw the eye. */
+.site-header__utils > a.site-header__ext { border-color: var(--brand); color: var(--brand); }
 
 .site-main { padding: 28px 20px 56px; }
 
@@ -58,21 +63,38 @@ blockquote { margin: 1rem 0; padding: .4rem 1rem; border-left: 3px solid var(--b
 .btn--primary:hover { background: var(--brand-dark); text-decoration: none; }
 .btn--ghost { border-color: var(--brand); color: var(--brand); }
 .btn--ghost:hover { background: var(--bg-soft); text-decoration: none; }
+.reg-note { margin-left: 12px; color: var(--muted); font-size: .9rem; }
 
-.hero-media { max-width: 720px; margin: 1.6rem auto 0; }
-.hero-media__frame { position: relative; aspect-ratio: 16 / 9; background: var(--bg-soft); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
-.hero-media__frame img, .hero-media__frame iframe, .hero-media__frame video { width: 100%; height: 100%; object-fit: cover; border: 0; }
+/* Images never exceed 90% of the viewport, never overflow their container, and are centered horizontally. */
+.site-main img { max-width: min(100%, 90vw); height: auto; display: block; margin-inline: auto; }
+
+.hero-media { max-width: min(720px, 90vw); margin: 1.6rem auto 0; }
+.hero-media__link { display: block; font-weight: 600; }
+/* The class is applied directly to the media element (img/iframe/video), so size the element itself. */
+.hero-media__frame { display: block; width: 100%; max-width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border: 1px solid var(--line); border-radius: 10px; background: var(--bg-soft); overflow: hidden; }
+/* An intro image keeps its own aspect ratio: cap the height, let the width follow the natural ratio. */
+img.hero-media__frame { aspect-ratio: auto; width: auto; height: auto; max-height: 360px; max-width: 100%; margin-inline: auto; }
+iframe.hero-media__frame, video.hero-media__frame { border: 0; }
 .hero-media__caption { text-align: center; color: var(--muted); font-size: .88rem; margin-top: .5rem; }
-.hero-media__link { font-weight: 600; }
 
 .edition-archive-banner { background: #eef1f6; border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px; margin: 0 0 18px; font-size: .92rem; }
 .edition-archive-banner__tag { font-weight: 700; margin-right: 8px; }
 .edition-archive-banner__link { font-weight: 600; margin-left: 6px; }
 
-.site-footer { border-top: 1px solid var(--line); background: var(--bg-soft); padding: 22px 0 30px; margin-top: 40px; font-size: .88rem; color: var(--muted); }
+/* Organized-by partner logos (images + links) — equal-width cells, aligned in a row. */
+.org-logos { display: grid; grid-template-columns: repeat(4, 1fr); align-items: center; gap: 20px 24px; margin: 12px 0 4px; }
+.org-logos a { display: flex; align-items: center; justify-content: center; padding: 4px 8px; }
+.org-logos img { max-height: 48px; max-width: 100%; width: auto; height: auto; margin: 0; }
+@media (max-width: 680px) {
+  .org-logos { grid-template-columns: repeat(2, 1fr); gap: 18px 20px; }
+  .org-logos img { max-height: 40px; }
+}
+
+.site-footer { border-top: 1px solid var(--line); background: var(--bg-soft); padding: 18px 0; margin-top: 48px; font-size: .86rem; color: var(--muted); }
 .site-footer a { color: var(--brand); }
-.site-footer__notices { margin: 0 0 .6rem; }
-.site-footer__draft { color: #9aa4b2; font-size: .8rem; margin-top: .6rem; }
+.site-footer__inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 4px 16px; }
+.site-footer__inner p { margin: 0; }
+.site-footer__name { font-weight: 700; color: var(--ink); }
 
 @media (max-width: 680px) {
   .hero__title { font-size: 2.2rem; }

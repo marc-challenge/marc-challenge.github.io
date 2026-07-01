@@ -20,8 +20,10 @@ event:
   contact_email: "marc2026@iotcoss.ac.kr"
 
 links:
+  metacom: "https://ieee-metacom.org/"
   dev_guide: "https://marc-challenge.readthedocs.io/"
   starter_kit: "https://github.com/marc-challenge/marc-starter-kit"
+  register_form: "https://docs.google.com/forms/d/e/1FAIpQLSfWKXByNoAe_CGjqMS1x6_ptVeqsqnQ9HYojFzBNezCyy93nA/viewform"
   sdk_version: "2026.1.0"
   collaborator_account: "marc-challenge-office"
 

@@ -17,51 +17,99 @@ permalink: /en/
   </p>
 
   <div class="hero__cta">
-    <a class="btn btn--primary" href="/en/register/">Register your team</a>
-    <a class="btn btn--ghost" href="/en/resources/">Developer guide &amp; starter kit</a>
+    <a class="btn btn--primary" href="{{ site.links.register_form }}" target="_blank" rel="noopener">Register your team</a>
+    <a class="btn btn--ghost" href="/en/notices/#resources">Developer guide &amp; starter kit</a>
   </div>
 
   {% include hero-media.html slot="intro" lang="en" %}
 </section>
 
+## What is MARC 2026
+
+**MARC** stands for the **MetaSejong AI Robot Challenge**, a robot-simulation
+competition for student teams. It is held in conjunction with
+**[IEEE MetaCom 2026]({{ site.links.metacom }})**, an international academic
+conference. MARC was first held in 2025, and this is its **second edition**.
+
+The challenge runs on a **digital twin — a virtual copy of the Sejong University
+campus**. Teams build an **AI agent** that takes a person's natural-language
+command and the campus CCTV video as input, locates the target, and drives a robot
+to retrieve it.
+
+MARC aims to become an **annually held** event. Where the 1st edition (2025) was a
+campus waste-sorting (recycling) mission, the 2026 edition extends the task to
+**Vision-Language-Action (VLA) grounding** — understanding a person's words and
+carrying them through to action.
+
 ## What you compete on
 
-Drive an autonomous robot across a virtual campus to **find lost belongings**
-and to **recognize people in distress or unusual situations (SAR)** — a citizen-safety
-robotics concept. This year shifts from 2025's object detection to
-**Vision-Language-Action (VLA) grounding**.
+What you build is an **AI agent that — in a virtual campus environment —
+understands what people say, analyzes the CCTV video, and controls the robot**.
+The robot, the CCTV, and the campus are all provided in simulation; you build the
+"brain" that operates inside it.
 
-- **Vision-Language-Action (VLA)** grounding
-- **Campus lost-and-found** search
-- **People-in-distress / unusual-situation recognition (SAR)**
-- Built on **Isaac Sim 5.1**
+A user's command comes in one of two forms: asking the agent to **find where the
+item is** and report it, or asking for the item to be **brought to them**.
 
-## Three things that set MARC apart
+Finding the item is done through the **fixed CCTV cameras** placed around campus.
+The agent analyzes this video to work out where the item is, and in the same
+footage it also **spots people in distress or unusual situations (SAR)**. If the
+user asks for the item to be brought to them, the agent then **controls the robot**
+to drive to that location, pick the item up, and move it to a designated place.
 
-| | |
-|---|---|
-| **1 · Realistic simulation** | Isaac Sim 5.1.0 worlds with CCTV and an onboard robot — close to real deployment. |
-| **2 · VLA grounding + multi-view fusion** | Fuse fixed CCTV (8MP) with the robot's stereo cameras; reason over language-grounded, relational scenes. |
-| **3 · Navigation + Pick-and-Place** | Combine mobile navigation with 6-DoF manipulation in one continuous mission. |
+In short, the agent needs to:
 
-## Key dates (tentative)
+- **Understand what a person says** — interpret the user's natural-language command
+  to work out what **action** the agent should take.
+- **Perceive from CCTV** — analyze the fixed CCTV video to locate the item, and
+  also spot people in distress or unusual situations (SAR).
+- **Retrieve by controlling the robot** — when the command is "bring it," the agent
+  drives the robot to the location, picks the item up, and moves it to a designated place.
+
+## Why take part
+
+- Strong teams join a **paper track** with the opportunity to publish via **IEEE Xplore**.
+- Advance to an **international finals** in **Xi'an, China** (in conjunction with IEEE MetaCom 2026).
+
+## Key dates
 
 | When | What |
 |---|---|
-| **Jul 6, 2026** | Public launch &amp; registration opens |
+| **Jul 6, 2026** | Platform &amp; guide release; registration opens |
 | **Aug 31, 2026** | Code &amp; paper submission deadline |
 | **~Sep 18, 2026** | Finalists announced |
 | **Nov 9, 2026** | Finals — Xi'an, China (IEEE MetaCom 2026) |
 
-> All dates are **tentative and subject to change**. See the full [Timeline](/en/timeline/).
+> See the full schedule and registration on the [Register](/en/register/#schedule) page.
 
-## Start building
+## Organizers
 
-Head to **[Resources](/en/resources/)** for the developer guide, starter kit, and SDK.
-Then **[register your team](/en/register/)** to receive your team ID and begin.
+### Organizing committee
 
----
+| Role | Name | Affiliation |
+|---|---|---|
+| Co-Chair | Prof. JaeSeung Song | Sejong University, South Korea |
+| Co-Chair | Prof. Li Bai | Temple University, USA |
+| Program Chair | Prof. Jaeho Kim | Sejong University, South Korea |
+| Technical Chair | Prof. Taehyun Kim | Sejong University, South Korea |
 
-> Please review the required notices on the **[Notices](/en/notices/)** page:
-> offline judging runtime · third-party license attribution · the competition
-> background (playground) may change.
+### Hosted by
+
+**[IEEE MetaCom 2026]({{ site.links.metacom }})** — the host conference of MARC.
+
+### Organized by
+
+<div class="org-logos">
+  <a href="https://www.iotcoss.ac.kr/" target="_blank" rel="noopener" title="IoT Convergence &amp; Open Sharing System"><img src="{{ '/assets/images/iotcoss-logo.png' | relative_url }}" alt="IoT Convergence &amp; Open Sharing System"></a>
+  <a href="https://meta.sejong.ac.kr/" target="_blank" rel="noopener" title="Research Center for Autotwin Technology"><img src="{{ '/assets/images/sponsor-itrc-rcatt.png' | relative_url }}" alt="Research Center for Autotwin Technology"></a>
+  <a href="http://sejong.ac.kr/" target="_blank" rel="noopener" title="Sejong University"><img src="{{ '/assets/images/sponsor-sejonguniv.png' | relative_url }}" alt="Sejong University"></a>
+  <a href="https://www.temple.edu/" target="_blank" rel="noopener" title="Temple University"><img src="{{ '/assets/images/temple-logo.png' | relative_url }}" alt="Temple University"></a>
+</div>
+
+## Contact {#contact}
+
+For inquiries, please use the contact channel below.
+
+- Email: **{{ site.event.contact_email }}**
+- Submission collaborator account (for scoring): **`marc-challenge-office`**
+  (added as a collaborator to your private repo — see [Register](/en/register/)).

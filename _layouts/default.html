@@ -29,12 +29,14 @@
         {%- endfor -%}
       </nav>
 
-      <div class="site-header__lang">
-                {%- assign target = "" -%}
+      <div class="site-header__utils">
+        <a class="site-header__ext" href="{{ site.links.dev_guide }}" target="_blank" rel="noopener">{% if lang == "ko" %}개발자 가이드{% else %}Developer Guide{% endif %}</a>
+        <a class="site-header__ext" href="{{ site.links.starter_kit }}" target="_blank" rel="noopener">{% if lang == "ko" %}스타터킷{% else %}Starter Kit{% endif %}</a>
+        {%- assign target = "" -%}
         {%- assign pool = site[other] -%}
         {%- for p in pool -%}{%- if p.ref == page.ref -%}{%- assign target = p.url -%}{%- endif -%}{%- endfor -%}
         {%- if target == "" -%}{%- assign target = "/" | append: other | append: "/" -%}{%- endif -%}
-        <a href="{{ target }}" hreflang="{{ other }}">{% if other == "ko" %}한국어{% else %}English{% endif %}</a>
+        <a class="site-header__lang-link" href="{{ target }}" hreflang="{{ other }}">{% if other == "ko" %}한국어{% else %}English{% endif %}</a>
       </div>
     </div>
   </header>
@@ -44,28 +46,16 @@
   </main>
 
   <footer class="site-footer">
-    <div class="wrap">
-      <p class="site-footer__notices">
+    <div class="wrap site-footer__inner">
+      <p class="site-footer__left">
+        <span class="site-footer__name">{{ site.event.full_name }}</span> &middot;&nbsp;
         {%- if lang == "ko" -%}
-          <strong>필수 공지</strong> ·
-          심사 실행환경은 인터넷이 차단됩니다(빌드 시점은 사용 가능). ·
-          사용된 제3자 OSS/USD 자산의 라이선스를 고지합니다. ·
-          공개 배경(playground)은 연습용 1종이며 실제 대회 배경은 달라질 수 있습니다.
-          <a href="/{{ lang }}/notices/">자세히 &rarr;</a>
+        <a href="{{ site.links.metacom }}">IEEE MetaCom 2026</a> 연계
         {%- else -%}
-          <strong>Required notices</strong> ·
-          The evaluation runtime runs offline (build-time internet is allowed). ·
-          Third-party OSS/USD asset licenses are acknowledged. ·
-          Only one practice background is published; the actual competition background may differ.
-          <a href="/{{ lang }}/notices/">Details &rarr;</a>
+        in conjunction with <a href="{{ site.links.metacom }}">IEEE MetaCom 2026</a>
         {%- endif -%}
       </p>
-      <p class="site-footer__meta">
-        {{ site.event.full_name }} &middot; in conjunction with {{ site.event.affiliation }}
-        &middot; <a href="{{ site.links.dev_guide }}">Developer Guide</a>
-        &middot; <a href="{{ site.links.starter_kit }}">Starter Kit</a>
-      </p>
-      <p class="site-footer__draft">DRAFT — staging preview ({{ site.event.short_name }}, season: {{ site.season_state }})</p>
+      <p class="site-footer__right">{% if lang == "ko" %}문의{% else %}Contact{% endif %}: {{ site.event.contact_email }}</p>
     </div>
   </footer>
 

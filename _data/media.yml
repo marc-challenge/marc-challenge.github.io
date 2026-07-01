@@ -7,9 +7,9 @@ intro:
   embed: ""
   autoplay: false
   muted: true
-  href: /en/about/
-  caption_en: "Intro video coming soon"
-  caption_ko: "소개 영상 준비 중 — 공개 예정"
+  href: ""
+  caption_en: ""
+  caption_ko: ""
 
 challenge_overview:
   type: image

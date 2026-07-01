@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "참가 등록 — MARC 2026"
+title: "참가 등록 · 일정 — MARC 2026"
 lang: ko
 ref: register
 permalink: /ko/register/
@@ -9,40 +9,43 @@ permalink: /ko/register/
 # 참가 등록
 
 {% if site.competition_active %}
-> 등록이 **진행 중**입니다(잠정 2026-07-06 ~ 07-31). 일정은 변경될 수 있습니다.
+> 등록이 **진행 중**입니다(2026-07-06 ~ 07-31).
 {% else %}
-> 아직 **등록 전**입니다. {{ site.event.short_name }} 등록은 공개일(잠정
-> **2026-07-06**)에 시작됩니다. 그 시점에 본 페이지가 활성화됩니다.
+> 아직 **등록 전**입니다. {{ site.event.short_name }} 등록은
+> **2026-07-06**에 시작됩니다. 그 시점에 본 페이지가 활성화됩니다.
 {% endif %}
 
 ## 참가 자격
 
-**학생 팀** 챌린지(워크숍형)입니다. 팀 구성·규모 안내는 공개 시점에 안내될 예정입니다.
+**대학생 또는 대학원생**으로 구성된 **5명 이내**의 팀이 참가할 수 있습니다.
 
-## 등록 절차
+## 등록 및 제출 절차
 
-1. **등록 폼 제출**(팀명·소속·연락처·동의).
-2. 제출 인증용 **팀 ID / 토큰 발급**.
-3. **스타터킷 내려받아** 개발 시작.
+1. **[등록 폼]({{ site.links.register_form }}) 제출**
+   - 팀명·소속·연락처·참가 동의 등 기본 정보를 입력해 참가를 신청합니다.
+   - *신청이 접수되면 주최 측이 **팀 ID 와 인증용 토큰을 팀장 이메일로 발급**합니다.*
+   - 발급받은 **팀 ID 와 토큰**은 이후 제출하는 결과물에 **반드시 적용**해야 합니다.
+2. **스타터킷 내려받아 개발**
+   - **[제공되는 리소스](/ko/notices/#resources)** 에서 스타터킷·SDK·개발자 가이드를 받아 개발을 시작합니다.
+3. **결과물(논문·프로그램) 제출**
+   - **논문** — [IEEE MetaCom 제출 안내](https://www.ieee-metacom.org/2026/submission.php)에 따라 **IEEE 양식**으로 작성하고, **[EasyChair](https://easychair.org/conferences/?conf=metacom2026)** 에서 **"Meta-Sejong AI Robotics Challenge 2026" 트랙**을 선택해 제출합니다.
+   - **프로그램** — 팀의 **Private GitHub 리포지토리**에 주최 계정 **`marc-challenge-office`** 를 **collaborator 로 추가**하는 방식으로 제출합니다. 주최가 이를 내려받아 **순차 채점**합니다.
 
-## 제출 모델 (요약)
+     > **중요** — 프로그램은 반드시 개발자 가이드에 따라 **Docker 이미지로 패키징**하여 **`docker compose up` 으로 실행되는 형태**여야 합니다.
 
-- 참가자 앱은 **Docker 기반 개발**, 표준 진입점은 **`docker compose up`**.
-- 자기 **Private GitHub 리포**에 주최 계정 **`marc-challenge-office`** 를
-  **collaborator 로 추가**.
-- 주최가 **동결 태그를 clone** 하여 **순차 채점**합니다.
+## 주요 일정 {#schedule}
 
-> 상세 제출 모델은 **[개발자 가이드](/ko/resources/)** 를 참조하세요. 토큰 등
-> 비밀은 절차로만 안내하며 **값·메커니즘은 비공개**입니다.
+| 시점 | 마일스톤 | 비고 |
+|---|---|---|
+| **2026-07-06 ~ 07-31** | **참가 등록** | |
+| **2026-08-31** | **논문 제출 마감** — EasyChair<br>**프로그램 제출 마감** — GitHub | |
+| **~2026-09-18** | **본선 진출팀 발표**(3~4팀) | |
+| **2026-10-09** | **논문 최종본(카메라레디) 제출 마감** — EasyChair<br>**프로그램 최종 리비전 제출 마감** — GitHub | 본선 진출팀만 해당 |
+| **2026-11-09** | **본선**<sup>1</sup> — IEEE MetaCom 2026, 중국 **시안(Xi'an)** | 발표 + 라이브 데모<sup>2</sup> |
+
+<sup>1</sup> 본선 라이브 데모가 진행될 경우, 오전에 연동 테스트가 진행될 수 있습니다.<br>
+<sup>2</sup> 본선 현장 사정으로 라이브 데모가 어려운 경우, 주최 측이 미리 준비한 데모 영상을 재생하는 것으로 대체할 수 있습니다.
 
 ## 등록하기
 
-{% if site.competition_active %}
-<a class="btn btn--primary" href="/apply/">등록 폼 열기</a>
-{% else %}
-<p><em>등록이 시작되면 이곳에 등록 폼이 표시됩니다.</em></p>
-{% endif %}
-
-## 문의
-
-연락 채널은 [Organizers](/ko/organizers/) 를 참조하세요.
+<a class="btn btn--primary" href="{{ site.links.register_form }}" target="_blank" rel="noopener">등록 폼 열기</a>{% unless site.competition_active %} <em class="reg-note">등록 마감: <strong>2026-07-31 24:00 (UTC)</strong> · 한국시간 <strong>2026-08-01 09:00</strong></em>{% endunless %}
