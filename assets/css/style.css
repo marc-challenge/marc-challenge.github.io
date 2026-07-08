@@ -1,0 +1,108 @@
+
+:root {
+  --ink: #1a2230;
+  --muted: #5b6675;
+  --line: #e2e6ec;
+  --brand: #1f4fd8;
+  --brand-dark: #163aa0;
+  --bg-soft: #f5f7fb;
+  --warn-bg: #fff7e6;
+  --warn-line: #f0c469;
+  --maxw: 980px;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  color: var(--ink);
+  font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR", sans-serif;
+  background: #fff;
+}
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+a { color: var(--brand); text-decoration: none; }
+a:hover { text-decoration: underline; }
+h1, h2, h3 { line-height: 1.25; }
+h2 { margin-top: 2.2rem; border-bottom: 1px solid var(--line); padding-bottom: .3rem; }
+table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .95rem; }
+th, td { border: 1px solid var(--line); padding: .5rem .7rem; text-align: left; vertical-align: top; }
+th { background: var(--bg-soft); }
+code { background: var(--bg-soft); padding: .1em .35em; border-radius: 4px; font-size: .9em; }
+blockquote { margin: 1rem 0; padding: .4rem 1rem; border-left: 3px solid var(--brand); background: var(--bg-soft); color: var(--muted); }
+
+.site-header { border-bottom: 1px solid var(--line); position: sticky; top: 0; background: #fff; z-index: 5; }
+.site-header__inner { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; padding-top: 12px; padding-bottom: 12px; }
+.site-header__brand { font-weight: 800; font-size: 1.15rem; color: var(--ink); }
+.site-nav { display: flex; gap: 4px 14px; flex-wrap: wrap; flex: 1; }
+.site-nav__link { color: var(--muted); font-size: .92rem; padding: 2px 0; }
+.site-nav__link.is-active { color: var(--brand); font-weight: 700; }
+.site-header__utils { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+/* All three pills are direct flex siblings sharing one box model so they render identically. */
+.site-header__utils > a { font-size: .85rem; line-height: 1.5; border: 1px solid var(--line); border-radius: 999px; padding: 3px 12px; color: var(--muted); white-space: nowrap; }
+.site-header__utils > a:hover { text-decoration: none; }
+/* Call-out: same pill as the language toggle, only recolored in brand to draw the eye. */
+.site-header__utils > a.site-header__ext { border-color: var(--brand); color: var(--brand); }
+/* Pending call-out (resources not yet released): same pill, muted + dashed, non-clickable. */
+.site-header__utils > .site-header__ext.is-pending { font-size: .85rem; line-height: 1.5; border: 1px dashed var(--line); border-radius: 999px; padding: 3px 12px; color: var(--muted); white-space: nowrap; cursor: default; }
+/* Inline non-link placeholder used where a resource/form link is not yet live. */
+.link-pending { color: var(--muted); font-style: italic; white-space: nowrap; }
+/* A primary button rendered as a disabled placeholder before registration opens. */
+.btn.is-disabled { opacity: .55; cursor: default; pointer-events: none; }
+
+.site-main { padding: 28px 20px 56px; }
+
+.season-banner { background: var(--warn-bg); border-bottom: 1px solid var(--warn-line); padding: 9px 0; text-align: center; font-size: .92rem; }
+.season-banner .wrap { padding: 0 20px; }
+.season-banner__tag { display: inline-block; background: var(--warn-line); color: #5a3d00; font-weight: 700; border-radius: 4px; padding: 1px 8px; margin-right: 8px; font-size: .8rem; }
+.season-banner__link { margin-left: 8px; font-weight: 600; }
+.season-banner--archived { background: #eef1f6; border-color: var(--line); }
+
+.hero { text-align: center; padding: 40px 0 26px; }
+.hero__eyebrow { color: var(--brand); font-weight: 700; letter-spacing: .02em; margin: 0 0 6px; text-transform: uppercase; font-size: .82rem; }
+.hero__title { font-size: 3rem; margin: 0; letter-spacing: -.01em; }
+.hero__subtitle { font-size: 1.3rem; color: var(--muted); margin: .2rem 0 1rem; }
+.hero__catch { max-width: 640px; margin: 0 auto 1.4rem; font-size: 1.1rem; }
+.hero__cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+.btn { display: inline-block; padding: 10px 22px; border-radius: 8px; font-weight: 700; border: 1px solid transparent; }
+.btn--primary { background: var(--brand); color: #fff; }
+.btn--primary:hover { background: var(--brand-dark); text-decoration: none; }
+.btn--ghost { border-color: var(--brand); color: var(--brand); }
+.btn--ghost:hover { background: var(--bg-soft); text-decoration: none; }
+.reg-note { margin-left: 12px; color: var(--muted); font-size: .9rem; }
+
+/* Images never exceed 90% of the viewport, never overflow their container, and are centered horizontally. */
+.site-main img { max-width: min(100%, 90vw); height: auto; display: block; margin-inline: auto; }
+
+.hero-media { max-width: min(720px, 90vw); margin: 1.6rem auto 0; }
+.hero-media__link { display: block; font-weight: 600; }
+/* The class is applied directly to the media element (img/iframe/video), so size the element itself. */
+.hero-media__frame { display: block; width: 100%; max-width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border: 1px solid var(--line); border-radius: 10px; background: var(--bg-soft); overflow: hidden; }
+/* An intro image keeps its own aspect ratio: cap the height, let the width follow the natural ratio. */
+img.hero-media__frame { aspect-ratio: auto; width: auto; height: auto; max-height: 360px; max-width: 100%; margin-inline: auto; }
+iframe.hero-media__frame, video.hero-media__frame { border: 0; }
+.hero-media__caption { text-align: center; color: var(--muted); font-size: .88rem; margin-top: .5rem; }
+
+.edition-archive-banner { background: #eef1f6; border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px; margin: 0 0 18px; font-size: .92rem; }
+.edition-archive-banner__tag { font-weight: 700; margin-right: 8px; }
+.edition-archive-banner__link { font-weight: 600; margin-left: 6px; }
+
+/* Organized-by partner logos (images + links) — equal-width cells, aligned in a row. */
+.org-logos { display: grid; grid-template-columns: repeat(4, 1fr); align-items: center; gap: 20px 24px; margin: 12px 0 4px; }
+.org-logos a { display: flex; align-items: center; justify-content: center; padding: 4px 8px; }
+.org-logos img { max-height: 48px; max-width: 100%; width: auto; height: auto; margin: 0; }
+@media (max-width: 680px) {
+  .org-logos { grid-template-columns: repeat(2, 1fr); gap: 18px 20px; }
+  .org-logos img { max-height: 40px; }
+}
+
+.site-footer { border-top: 1px solid var(--line); background: var(--bg-soft); padding: 18px 0; margin-top: 48px; font-size: .86rem; color: var(--muted); }
+.site-footer a { color: var(--brand); }
+.site-footer__inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 4px 16px; }
+.site-footer__inner p { margin: 0; }
+.site-footer__name { font-weight: 700; color: var(--ink); }
+
+@media (max-width: 680px) {
+  .hero__title { font-size: 2.2rem; }
+  .site-header__inner { gap: 8px; }
+}

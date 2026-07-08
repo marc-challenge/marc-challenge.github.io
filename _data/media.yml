@@ -1,0 +1,22 @@
+
+intro:
+  type: image
+  src: assets/media/marc-2026-concepts.png
+  poster: assets/media/marc-2026-concepts.png
+  ratio: "16:9"
+  embed: ""
+  autoplay: false
+  muted: true
+  href: ""
+  caption_en: ""
+  caption_ko: ""
+
+challenge_overview:
+  type: image
+  src: assets/media/challenge-overview.png
+  poster: assets/media/challenge-overview.png
+  ratio: "16:9"
+  embed: ""
+  href: ""
+  caption_en: "Mission overview visual (placeholder)"
+  caption_ko: "미션 개요 비주얼 (준비 중)"

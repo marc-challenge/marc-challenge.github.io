@@ -1,0 +1,65 @@
+
+title: "MARC 2026 — MetaSejong AI Robot Challenge"
+description: "MetaSejong AI Robot Challenge 2026 — Vision-Language-Action robot competition, in conjunction with IEEE MetaCom 2026."
+url: "https://marc-challenge.github.io"
+baseurl: ""
+lang_default: en
+
+season_state: active
+edition: "2026"
+
+# Two independent gates:
+#   registration_open  — the registration form (Google Form). Live from launch day (2026-07-06).
+#   competition_active — developer resources (guide, starter kit). Held back to open_date.
+# On open_date (2026-07-08), flip competition_active to true to unlock the resource links.
+registration_open: true
+competition_active: true
+
+# Developer-resource release date & time (guide + starter kit). Registration is already open.
+open_date: "2026-07-08"
+open_time_utc: "12:00 UTC"
+open_time_kst: "21:00 KST"
+
+event:
+  short_name: "MARC 2026"
+  full_name: "MetaSejong AI Robot Challenge 2026"
+  edition_no: "2nd"
+  series: "MetaSejong AI Robot Challenge"
+  affiliation: "IEEE MetaCom 2026"
+  venue: "Xi'an, China"
+  finals_date: "2026-11-09"
+  contact_email: "marc2026@iotcoss.ac.kr"
+
+links:
+  metacom: "https://ieee-metacom.org/"
+  dev_guide: "/marc-dev-guide"   # GitHub Pages, same domain; append /{{ lang }}/ at each use site
+  starter_kit: "https://github.com/marc-challenge/marc-starter-kit"
+  register_form: "https://docs.google.com/forms/d/e/1FAIpQLSd0ppulwaD5-Wv8EJnDSF1K9mExQ_gXFPPj6y-u4u2nEW5KYg/viewform"
+  sdk_version: "2026.1.0"
+  collaborator_account: "marc-challenge-office"
+
+collections:
+  ko:
+    output: true
+    permalink: /ko/:path/
+  en:
+    output: true
+    permalink: /en/:path/
+
+defaults:
+  - scope: { path: "_ko", type: "ko" }
+    values: { layout: "default", lang: "ko" }
+  - scope: { path: "_en", type: "en" }
+    values: { layout: "default", lang: "en" }
+
+markdown: kramdown
+sass:
+  style: compressed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - _config.draft.yml
+  - vendor
+  - .github

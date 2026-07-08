@@ -1,0 +1,46 @@
+# GitHub Pages build/deploy — MARC 2026 homepage (DRAFT scaffold).
+#
+# 이 워크플로는 이 폴더가 marc-challenge.github.io 리포 *루트* 로 승격됐을 때
+# 그대로 동작하도록 준비된 것이다(2025 public-docs 사이트와 독립).
+# Actions 기반 빌드라 gem 테마/플러그인 구성에 자유롭다.
+name: Deploy Jekyll site to Pages
+
+on:
+  push:
+    branches: ["master", "main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2"
+          bundler-cache: true
+      - uses: actions/configure-pages@v5
+      - name: Build with Jekyll
+        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        env:
+          JEKYLL_ENV: production
+      - uses: actions/upload-pages-artifact@v3
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-22.04
+    needs: build
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

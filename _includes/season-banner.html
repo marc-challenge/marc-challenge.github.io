@@ -1,0 +1,38 @@
+
+{%- assign state = site.season_state | default: "announced" -%}
+{%- assign lang = page.lang | default: site.lang_default -%}
+
+{%- if state != "active" -%}
+<div class="season-banner season-banner--{{ state }}" role="status">
+  {%- case state -%}
+
+  {%- when "off-season" -%}
+    {%- if lang == "ko" -%}
+      <span class="season-banner__tag">안내</span>
+      <span>다음 회차 MARC 대회를 준비 중입니다. 일정이 정해지면 이곳에서 먼저 공지합니다.</span>
+    {%- else -%}
+      <span class="season-banner__tag">Notice</span>
+      <span>The next MARC challenge is in preparation. Schedule updates will be announced here first.</span>
+    {%- endif -%}
+
+  {%- when "announced" -%}
+    {%- if lang == "ko" -%}
+      <span class="season-banner__tag">접수 중</span>
+      <span>{{ site.event.short_name }} 참가 등록을 시작합니다. 개발자 가이드·스타터킷은 {{ site.open_date }}({{ site.open_time_kst }})에 공개됩니다.</span>
+    {%- else -%}
+      <span class="season-banner__tag">Now open</span>
+      <span>{{ site.event.short_name }} registration is open. The developer guide &amp; starter kit follow on {{ site.open_date }} ({{ site.open_time_utc }}).</span>
+    {%- endif -%}
+
+  {%- when "archived" -%}
+    {%- if lang == "ko" -%}
+      <span class="season-banner__tag">종료</span>
+      <span>{{ site.event.short_name }} 는 종료되었습니다.</span>
+    {%- else -%}
+      <span class="season-banner__tag">Concluded</span>
+      <span>{{ site.event.short_name }} has concluded.</span>
+    {%- endif -%}
+
+  {%- endcase -%}
+</div>
+{%- endif -%}

@@ -1,0 +1,41 @@
+
+{%- assign m = site.data.media[include.slot] -%}
+{%- assign lang = include.lang | default: page.lang | default: site.lang_default -%}
+
+<figure class="hero-media ratio-{{ m.ratio | default: '16:9' | replace: ':', '-' }}">
+  {%- if m.type == "video" -%}
+        {%- if m.embed and m.embed != "" -%}
+      <iframe class="hero-media__frame"
+              src="{{ m.embed }}"
+              title="{{ site.event.full_name }} intro video"
+              frameborder="0"
+              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen></iframe>
+    {%- else -%}
+      <video class="hero-media__frame"
+             poster="{{ m.poster | default: m.src | relative_url }}"
+             {% if m.autoplay %}autoplay{% endif %}
+             {% if m.muted %}muted{% endif %}
+             controls playsinline>
+        <source src="{{ m.src | relative_url }}" type="video/mp4">
+      </video>
+    {%- endif -%}
+  {%- else -%}
+        {%- if m.href and m.href != "" -%}
+      <a href="{{ m.href | relative_url }}" class="hero-media__link">
+        <img class="hero-media__frame" src="{{ m.src | relative_url }}"
+             alt="{% if lang == 'ko' %}{{ m.caption_ko }}{% else %}{{ m.caption_en }}{% endif %}">
+      </a>
+    {%- else -%}
+      <img class="hero-media__frame" src="{{ m.src | relative_url }}"
+           alt="{% if lang == 'ko' %}{{ m.caption_ko }}{% else %}{{ m.caption_en }}{% endif %}">
+    {%- endif -%}
+
+        {%- if lang == "ko" and m.caption_ko != "" -%}
+      <figcaption class="hero-media__caption">{{ m.caption_ko }}</figcaption>
+    {%- elsif m.caption_en != "" -%}
+      <figcaption class="hero-media__caption">{{ m.caption_en }}</figcaption>
+    {%- endif -%}
+  {%- endif -%}
+</figure>
