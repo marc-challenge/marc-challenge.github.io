@@ -22,6 +22,18 @@ permalink: /en/register/
 Open to teams of **up to 5 members** made up of **undergraduate or graduate
 students**.
 
+You can register and start developing even if you have not decided on your
+teammates yet. Members may be added or changed after you register, and **the
+author list on the paper you submit by the paper submission deadline becomes your
+team's final roster**.
+
+Your advisor may be listed as a co-author on the paper, in addition to the team
+members.
+
+The team leader, however, is expected to stay the same after registration, since
+the team ID and authentication token are issued to the leader's email. If you need
+to change the leader, please contact the organizers.
+
 ## Registration & submission
 
 1. **Submit the {% if site.registration_open %}[registration form]({{ site.links.register_form }}){% else %}registration form{% endif %}**{% unless site.registration_open %} <em class="reg-note">(opens {{ site.open_date }})</em>{% endunless %}
