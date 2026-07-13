@@ -31,7 +31,7 @@ event:
   contact_email: "marc2026@iotcoss.ac.kr"
 
 links:
-  metacom: "https://ieee-metacom.org/"
+  metacom: "https://metacomm.org/"
   dev_guide: "/marc-dev-guide"   # GitHub Pages, same domain; append /{{ lang }}/ at each use site
   starter_kit: "https://github.com/marc-challenge/marc-starter-kit"
   register_form: "https://docs.google.com/forms/d/e/1FAIpQLSd0ppulwaD5-Wv8EJnDSF1K9mExQ_gXFPPj6y-u4u2nEW5KYg/viewform"

@@ -35,7 +35,7 @@ permalink: /ko/register/
 2. **스타터킷 내려받아 개발**
    - **[제공되는 리소스](/ko/notices/#resources)** 에서 스타터킷·SDK·개발자 가이드를 받아 개발을 시작합니다.{% unless site.competition_active %} <em class="reg-note">(개발자 가이드·스타터킷은 {{ site.open_date }} 공개)</em>{% endunless %}
 3. **결과물(논문·프로그램) 제출**
-   - **논문** — [IEEE MetaCom 제출 안내](https://www.ieee-metacom.org/2026/submission.php)에 따라 **IEEE 양식**으로 작성하고, **[EasyChair](https://easychair.org/conferences/?conf=metacom2026)** 에서 **"Meta-Sejong AI Robotics Challenge 2026" 트랙**을 선택해 제출합니다.
+   - **논문** — [IEEE MetaCom 제출 안내](https://metacomm.org/2026/submission.php)에 따라 **IEEE 양식**으로 작성하고, **[EasyChair](https://easychair.org/conferences/?conf=metacom2026)** 에서 **"Meta-Sejong AI Robotics Challenge 2026" 트랙**을 선택해 제출합니다.
    - **프로그램** — 팀의 **Private GitHub 리포지토리**에 주최 계정 **`marc-challenge-office`** 를 **collaborator 로 추가**하는 방식으로 제출합니다. 주최가 이를 내려받아 **순차 채점**합니다.
 
      > **중요** — 프로그램은 반드시 개발자 가이드에 따라 **Docker 이미지로 패키징**하여 **`docker compose up` 으로 실행되는 형태**여야 합니다.
