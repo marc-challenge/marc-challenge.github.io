@@ -43,7 +43,7 @@ to change the leader, please contact the organizers.
 2. **Download the starter kit and develop**
    - Get the starter kit, SDK, and developer guide from the **[resources section](/en/notices/#resources)** and start building.{% unless site.competition_active %} <em class="reg-note">(the developer guide &amp; starter kit open {{ site.open_date }})</em>{% endunless %}
 3. **Submit your results — paper and program**
-   - **Paper** — write it in the **IEEE format** per the [IEEE MetaCom submission guide](https://metacomm.org/2026/submission.php), and submit it on **[EasyChair](https://easychair.org/conferences/?conf=metacom2026)** under the **"Meta-Sejong AI Robotics Challenge 2026" track**.
+   - **Paper** — write it in the **IEEE format** per the [IEEE MetaCom submission guide](https://metacomm.org/2026/submission.php), and submit it on **[EasyChair](https://easychair.org/conferences/?conf=metacom2026)** under the **"Meta-Sejong AI Robotics Challenge 2026" track**. Papers must be **between 2 and 4 pages** long.
    - **Program** — submit it by adding the organizer account **`marc-challenge-office`** as a **collaborator** on your team's **private GitHub repository**; the organizers pull it and **score submissions sequentially**.
 
      > **Important** — the program must be **packaged as a Docker image that runs with `docker compose up`**, following the developer guide.
